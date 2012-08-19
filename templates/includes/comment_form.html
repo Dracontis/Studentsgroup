@@ -1,0 +1,22 @@
+<p class='title'>Комментарии: </p>
+{% if pagename != 'archive' %}
+    <form action="{{ request.path }}" method="post" id="commentform" name="submitform">
+        {% csrf_token %}
+        {% if not logged %}
+            {# TODO: change url  #}
+            <a href="https://loginza.ru/api/widget?token_url=http://127.0.0.1:8000/login/?next={{ request.path }}&providers_set=vkontakte,google" class="loginza">Войти через OpenID</a><br />
+            <textarea rows="7" cols="100" disabled="true">Пожалуйста, сперва зайдите под своим логином.</textarea><br />
+        {% else %}
+            <a>Вы зашли как - <a href="{{ profile_link }}" class="nickname">{{ nickname }} </a></a><a href="/logout/?next={{ request.path }}">(Выйти)</a><br />
+            {% if comment_form.text.errors %}
+                {{ comment_form.text.errors }}
+            {% endif %}
+            {{ comment_form.nickname  }}
+            {{ comment_form.user_link }}
+            {{ comment_form.rel_message }}
+            {{ comment_form.text }}<br />
+        {% endif %}
+        <input name="submit" type="submit" class="submit" tabindex="4" value="Оставить комментарий" /><br />
+    </form>
+    <hr />
+{% endif %}

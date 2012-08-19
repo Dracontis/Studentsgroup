@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head%}
+    <style type="text/css" media="all">
+        #archive_menu .active{ background-color: #8a817c; !important }
+    </style>
+{% endblock %}
+
+{% block menu %}
+    {% include 'includes/menu_portal.html' %}
+{% endblock %}
+
+{% block content %}
+    {% if main_category == 'news' or main_category == 'tasks' %}
+        {% include 'includes/message.html' %}
+    {% endif %}
+    {% if main_category == 'books' %}
+        {% include 'includes/book.html' %}
+    {% endif %}
+
+    {% include 'includes/paginator_archive.html' %}
+{% endblock %}
+
+{% block submenu %}
+    <div id='archive_menu'>
+        {# Display all menu objects without 'archive' #}
+        <h3>Меню:</h3>
+         {% for obj in menu_obj  %}
+            {% if obj.link != 'archive' %}
+                {% if obj.link == main_category %}
+                    <li class="active"><a href="?main_category={{ obj.link }}">{{ obj.title }}<span></span></a></li>
+                {% else %}
+                    <li><a href="?main_category={{ obj.link }}">{{ obj.title }}<span></span></a></li>
+                {% endif %}
+             {% endif %}
+         {% endfor %}
+        {# Display all sub categories #}
+        {% if main_category != 'news' %}
+            {% if categories %}
+                <h3>Категории:</h3>
+                <ul>
+                    {% for category in categories %}
+                    <li><a href="?main_category={{ main_category }}&category={{ category }}">{{ category }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}

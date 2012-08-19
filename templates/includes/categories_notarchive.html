@@ -1,0 +1,10 @@
+{# As you see - include for no archive entries template #}
+
+{% if categories %}
+    <h3>Категории:</h3>
+    <ul>
+        {% for category in categories %}
+            <li><a href="?category={{ category }}">{{ category }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}

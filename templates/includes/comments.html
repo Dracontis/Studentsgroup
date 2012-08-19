@@ -1,0 +1,12 @@
+{# base_message related template for displaying comment #}
+{% if comments %}
+    {% for comment in comments %}
+        <div class="comment">
+            <span class="comment_username"><a class="comment_link">{{ comment.nickname }}</a></span>
+            <div class="comment_date"><a class="comment_date_border">{{ comment.date }}</a></div>
+            <div class="comment_text">{{ comment.text|linebreaksbr|urlize }}</div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>Комментариев пока нет.</p>
+{% endif %}

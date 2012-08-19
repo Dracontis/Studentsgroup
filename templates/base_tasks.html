@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+    {% include 'includes/menu_portal.html' %}
+{% endblock %}
+
+{% block content %}
+    {% include 'includes/message.html' %}
+
+    {% include 'includes/paginator.html' %}
+{% endblock %}
+
+{% block submenu %}
+    {% include 'includes/categories_notarchive.html' %}
+{% endblock %}

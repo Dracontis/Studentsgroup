@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+    {% include 'includes/menu_portal.html' %}
+    <form action="{{ request.path }}" method="post" id="search">
+        {% csrf_token %}
+        <fieldset>
+            <input type="text" name="search" value="" class="button" />
+            <input type="submit" value="" class="submit" />
+        </fieldset>
+    </form>
+{% endblock %}
+{% block content %}
+    {% include 'includes/book.html' %}
+
+    {% include 'includes/paginator.html' %}
+{% endblock %}
+
+{% block submenu %}
+    {% include 'includes/categories_notarchive.html' %}
+{% endblock %}

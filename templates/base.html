@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="autor" content="Template author: Breezy New Media (info@breezy.cz); Website author: Dracontis " />
+<meta name="copyright" content="Dracontis" />
+<meta name="description" content=""  />
+<meta name="keywords" content="" />
+<meta name="google-site-verification" content="xTGGlciFzGslsWhkpmaGBlLLigZlKfPzb6ccLllqudk" />
+<title>Student's Group - {{ group_name }}</title>
+<link rel="stylesheet" type="text/css" href="/static/css/default.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/static/css/print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="/static/css/styles.css" media="all">
+{% block head %}{% endblock %}
+</head>
+<body>
+
+<div id="view">
+    <div id="head">
+        <div id="logo">
+            <a href="/" class="block">&nbsp;</a>
+            <h1><a>Student's <span>Group</span></a></h1>
+            <h2><a>{{ group_name }}</a></h2>
+        </div>
+    <hr class="hidden" />
+    <div id="mainMenu">
+    {% block menu %}{% endblock %}
+    </div>
+    <hr class="hidden" />
+  </div>
+
+  <div id="content">
+    <div id="contentBlock">
+        {% block content %}{% endblock %}
+    </div>
+    <hr class="hidden" />
+    <div id="menuBlock">
+      <div class="box firstBox subMenu">
+        {% block submenu %}{% endblock %}
+      </div>
+    </div>
+  </div>
+  <hr class="hidden" />
+
+  <div id="foot">
+    <p class="fl">&copy; <a href="http://dracontis.blogspot.com/">Dracontis</a></p>
+    <p class="fr"><a href="http://www.breezy.cz/reference/webove-sablony-zdarma" title="More free templates coming soon">Free template</a> created by <a href="http://www.breezy.cz" class="ico ico-breezy">Breezy New Media</a> | <a href="http://free-templates.ru" class="ico">free-templates.ru</a> | <a href="http://studentsgroup.net/admin/" class="ico">Admin</a></p>
+  </div>
+</div>
+
+</body>
+</html>

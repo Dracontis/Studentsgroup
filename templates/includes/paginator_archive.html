@@ -1,0 +1,13 @@
+<div id="pagination">
+    {% if messages.has_previous %}
+        <a class="backward-link" href="?sub_category={{ sub_category }}&main_category={{ main_category }}&page={{ messages.previous_page_number }}">< Previous page</a>
+    {% endif %}
+
+    {% if  messages.paginator.num_pages > 1 %}
+        <a class='current_page'>Page {{ messages.number }} of {{ messages.paginator.num_pages }}.</a>
+    {% endif %}
+
+    {% if messages.has_next %}
+        <a class="forward-link" href="?sub_category={{ sub_category }}&main_category={{ main_category }}&page={{ messages.next_page_number }}">Next page ></a>
+    {% endif %}
+</div>

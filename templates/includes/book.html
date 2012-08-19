@@ -1,0 +1,25 @@
+{% if messages.object_list %}
+    <div id="books">
+        {% for book in messages.object_list %}
+            <div class="book">
+                <div class="img_block">
+                    {% if book.file_cover != '' %}
+                        <img class="cover" src="/media/{{ book.file_cover }}" alt=""/>
+                    {% else %}
+                        <img class="cover" src="/static/img/no_img.png" alt=""/>
+                    {% endif %}
+                </div>
+                <div class="info_block">
+                    <a class="infotag">Название (ссылка): </a><br /><a href="{{ book.link }}" class="link">{{ book.title }}</a><br />
+                    <a class="infotag">Автор: </a><a>{{ book.author }}</a><br />
+                    <a class="infotag">Категория: </a><a>{{ book.sub_category }}</a><br />
+                </div>
+                <div class="description">
+                    <a class="infotag">Описание: </a><br /><a>{{ book.description|linebreaksbr|urlize }}</a><br /></div>
+                <div style="clear:both"></div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    {% include "includes/entries_not_found.html" %}
+{% endif %}

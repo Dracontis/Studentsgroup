@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+    {% include 'includes/menu_portal.html' %}
+{% endblock %}
+
+{% block content %}
+    <div id="permission">
+        <a>Администратор данной группы закрыл доступ к содержимому.</a><br />
+        {% if not logged %}
+            {# TODO: change url #}
+            <a href="https://loginza.ru/api/widget?token_url=http://127.0.0.1:8000/login/?next={{ request.path }}&providers_set=vkontakte,google">Пожалуйста авторизируйтесь</a>
+        {% else %}
+            <form action="/{{ group_id }}/groupauth/" method="post">
+                <a>Вы авторизированы, но у вас нет прав для просмотра этого раздела.</a><br />
+                <a class="errormsg">{{ error_message }}</a><br />
+                <input type="submit" value="Отослать запрос на вступление в группу {{ group_name }}" class="open_btn">
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}

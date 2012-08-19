@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <style type="text/css" media="all">
+        #contentBlock { padding: 0 40px; width: 820px; }
+        #menuBlock { display: none; }
+    </style>
+{% endblock %}
+
+{% block menu %}
+    {% include 'includes/menu_portal.html' %}
+{% endblock %}
+
+{% block content %}
+    {% include 'includes/message.html' %}
+
+    {% include 'includes/paginator.html' %}
+{% endblock %}

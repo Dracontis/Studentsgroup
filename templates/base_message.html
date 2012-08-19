@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <script src="http://loginza.ru/js/widget.js" type="text/javascript"></script>
+    <style media="all">
+        #contentBlock { padding: 0 40px; width: 820px; }
+        .ico-breezy { padding-top: 3px; }
+        #menuBlock { display: none; }
+    </style>
+{% endblock %}
+
+{% block menu %}
+    {% include 'includes/menu_portal.html' %}
+{% endblock %}
+
+{% block content %}
+    {# Main message block #}
+    <div class="item">
+        <h3>{{ message.title }}</h3>
+        <p class="info"> {{ message.date }}</p>
+        <p>{{ message.text|safe }}</p>
+    </div>
+    {# Advertisment block #}
+    <div class="item">
+        {% include 'includes/adv.html' %}
+    </div>
+    {# Form and comments block #}
+    <div id="comments">
+        {% include 'includes/comment_form.html' %}
+        {% include 'includes/comments.html' %}
+    </div>
+{% endblock %}

@@ -1,0 +1,54 @@
+/* Paginator navigation styles*/
+#pagination .backward-link{ float: left; }
+#pagination .forward-link { float: right; }
+#pagination .current_page:hover { text-decoration: underline; }
+#pagination { text-align: center; margin-bottom: 18px; clear: both; }
+/* /books/ page styles for book representation */
+#books { font-size: 14px; }
+#books a, a:hover { text-decoration: none; color: #3E3533; }
+#books .book { border-bottom: 1px solid #D8D8D8; margin-bottom: 10px; padding-bottom: 10px; width: 100%; clear: both; }
+#books .cover { float: left; height: 250px; width: 150px; }
+#books .infotag{ font-weight: bold; }
+#books .infotag{ font-weight: bold; }
+#books .img_block { float: left; }
+#books .info_block { float: right; width: 370px; }
+#books .link { text-decoration: underline; color: #0000FF; }
+#books .description { clear: both; }
+#books,#ent_404 a { color: #3E3533; text-decoration: none; }
+#books,#ent_404 a:hover { text-decoration: none; !important }
+
+#comments a { color: #7f0627; }
+#comments a:hover { color: #AA0000; text-decoration: none; }
+#comments form {}
+#comments .title { font-weight: bold; font-size: 20px; color: #7f0627; }
+#comments .comment { padding: 10px; }
+#comments .submit { margin: 10px; }
+#comments .nickname { text-decoration: none; }
+#comments .comment_username { color: #7f0627; font-weight: bold; font-size: 1.4em; }
+#comments .comment_link { text-decoration: none; }
+#comments .comment_date { padding-top: 2px; padding-bottom: 2px; font-size: 0.9em; }
+#comments .comment_date_border { border-bottom: 1px solid; }
+#comments .comment_text { padding-top: 2px; padding-bottom: 2px; color: #3E3533; }
+
+#error404 { padding-bottom: 10px; }
+#error404 a:hover { color: rgb(175, 7, 49); }
+
+#about, #index, #permission { padding-bottom: 20px; }
+#about a, a:hover, #index a,a:hover, #reg_form a,a:hover, #permission a,a:hover { color: rgb(62, 53, 51) }
+#about ul { padding: 10px 0 10px 0; margin: 0 0 0 10px; }
+#about .block { padding-bottom: 20px; }
+#about .title { font-weight: bold; font-size: 2.2em; }
+#about .text, #index .text { font-size: 1em; }
+#index .form { padding: 20px 0 10px 0; }
+
+#permission .open_btn { margin: 10px 0 0 0;}
+#permission .errormsg { color: rgb(175, 7, 49); }
+#regbtn { margin: 5px 0 0 0; }
+
+/* Autocomplete */
+.ac_result { padding: 0px; border: 1px solid black; background-color: white; overflow: hidden; z-index: 99999; }
+.ac_result ul { width: 100%; list-style-position: outside; list-style: none; padding: 0; margin: 0 }
+.ac_result li { margin: 0px; padding 2px 5px; cursor: default; display: block; font: menu; font-size: 12px; line-height: 16px; overflow: hidden; }
+.ac_loading { background: white url('indicator.gif') right center no-repeat; }
+.ac_odd,.ac_even { background-color: #eeeeee; }
+.ac_over { background-color: #0A246A; color: white; }

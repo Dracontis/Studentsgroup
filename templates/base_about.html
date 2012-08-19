@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+    {% include 'includes/menu_enterance.html' %}
+{% endblock %}
+
+{% block content %}
+    {% include "includes/static_about.html" %}
+{% endblock %}
+
+{% block submenu %}
+    <div id='reg_form'>
+        <form action="/about/" method="post" name='regform'>
+            {% if reg_form.errors %}
+                <a>Пожалуйста, заполните все поля.</a><br />
+            {% endif %}
+            <a>Логин:</a><br />
+            {{ reg_form.nickname }} <br />
+            <a>Имя:</a><br />
+            {{ reg_form.first_name }} <br />
+            <a>Фамилия:</a><br />
+            {{ reg_form.last_name }} <br />
+            {% if reg_form.email.errors %}
+                <a>Неправильно введен e-mail.</a><br />
+            {% endif %}
+            <a>E-mail:</a><br />
+            {{ reg_form.email }} <br />
+            <a>Телефон:</a><br />
+            {{ reg_form.phone }} <br />
+            <a>Институт:</a><br />
+            {{ reg_form.university }} <br />
+            <a>Группы (полное название):</a><br />
+            {{ reg_form.groups }} <br />
+            <a>Не пускать студентов других групп в данный портал:</a>
+            {{ reg_form.is_hidden }}<br />
+            <input type="submit" value="Зарегистрироваться" id='regbtn'/>
+        </form>
+    </div>
+{% endblock %}

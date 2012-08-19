@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <style type="text/css" media="all">
+        #contentBlock { padding: 0 40px; width: 820px; }
+        #menuBlock { display: none; }
+    </style>
+{% endblock %}
+
+{% block menu %}
+    {% include 'includes/menu_enterance.html' %}
+{% endblock %}
+
+{% block content %}
+    <div id="index">
+        <a class="text">Добро пожаловать на сайт, призванный облегчить студентам учебный процесс. Если ваша группа уже есть в системе – просто выберите её из списка и вы будете автоматически перенаправлены на страницу группы.</a><br />
+        <form class="form">
+            <select onchange="window.location.href=this.form.URL.options[this.form.URL.selectedIndex].value" name="URL" class="select">
+                <option value="">Выберите свою группу</option>
+                {% for group in group_list %}
+                    <option value="/{{ group.id }}/">({{ group.university.abbreviation }}) {{ group.group_title }}</option>
+                {% endfor %}
+            </select>
+        </form><br />
+        <a class="text">Сайт не поддерживает автоматической регистрации, поэтому вы можете отправить свою заявку на рассмотрение через форму на странице<br/> «</a><a href="/about/" class="text">О сайте</a><a class="text">». Примечание: форма заполняется на одного человека, если необходимо зарегистрировать несколько, то только по очереди, так же если задержка между заявками более 20 минут, то последующие уже не будут рассмотрены и тогда зарегистрировать дополнительных пользователей можно будет только через сообщения администратору через специальную форму от зарегистрированного пользователя. </a>
+    </div>
+{% endblock %}

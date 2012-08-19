@@ -1,0 +1,15 @@
+{% if messages.object_list %}
+    {% for message in messages.object_list %}
+    <div class="item">
+        <h3>{{ message.title }}</h3>
+        {% if main_category_obj.link != 'tasks' %}
+        <p class="info"> {{ message.date }} - <a href="/{{ group_id }}/{{ pagename }}/{{ message.id }}/"> Комментарии ({{ message.comments }})</a></p>
+        {% else %}
+         <p class="info"> {{ message.date }} - <a href="?category={{ pagename }}">{{ message.sub_category }}</a> - <a href="/{{ group_id }}/{{ main_category_obj.link }}/{{ message.id }}/">Комментарии ({{ message.comments }})</a></p>
+        {% endif %}
+        <p>{{ message.text|safe }}</p>
+    </div>
+{% endfor %}
+{% else %}
+    {% include "includes/entries_not_found.html" %}
+{% endif %}

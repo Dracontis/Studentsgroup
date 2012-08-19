@@ -1,0 +1,9 @@
+<ul>
+    {% for obj in menu_obj  %}
+        {% if obj.link != pagename %}
+            <li><a href="/{{ group_id }}/{{ obj.link }}/">{{ obj.title }}<span></span></a></li>
+        {% else %}
+            <li class="active"><a href="/{{ group_id }}/{{ obj.link }}/">{{ obj.title }}<span></span></a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
